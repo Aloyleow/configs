@@ -10,10 +10,15 @@ local config = wezterm.config_builder()
 config.initial_cols = 180
 config.initial_rows = 38
 
--- or, changing the font size and color scheme.
-config.font_size = 10
-config.color_scheme = 'Builtin Dark'
+-- Fonts size and color scheme. 
+config.font_size = 12
+config.font = wezterm.font("JetBrains Mono")
+config.color_scheme = 'Ashes (base16)'
 config.window_background_opacity = 0.75
 
+-- Set tab length
+
 -- Finally, return the configuration to wezterm:
+config.front_end = "WebGpu"
+config.automatically_reload_config = true
 return config
