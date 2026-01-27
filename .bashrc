@@ -38,7 +38,7 @@ gitty() {
   git rev-parse --is-inside-work-tree &>/dev/null || return
 
   local branch
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null)
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
 
   printf "%b" "${rainbow[green]}${branch}${rainbow[reset]}"
 }
