@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 
 -- Other wezterm actions
 local newTabInNewWindow = wezterm.action_callback(function(win, pane)
-        pane:move_to_new_window()
+	pane:move_to_new_window()
 end)
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -14,8 +14,12 @@ local config = wezterm.config_builder()
 config.initial_cols = 180
 config.initial_rows = 38
 
--- Fonts
-config.font = wezterm.font("3270 Nerd Font Mono SemCond")
+-- Fonts 
+config.font = wezterm.font_with_fallback {
+  '3270 Nerd Font Mono SemCond', 
+  'JetBrains Mono',
+}
+
 config.font_size = 16
 
 -- Rainbow stuff
