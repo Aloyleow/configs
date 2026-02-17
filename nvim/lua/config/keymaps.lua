@@ -14,3 +14,8 @@ map("t", "<leader><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 map({ "n", "v" }, "<leader>f", function()
   require("conform").format()
 end, { desc = "Format file" })
+
+-- GitLens/Blamer
+map("n", "<leader>b", function()
+  vim.cmd("BlamerToggle")
+end)

@@ -48,4 +48,4 @@ arrow() {
 }
 
 PROMPT_DIRTRIM=2
-PS1="\h \[\$(directea)\] \[\$(gitty)\]\n\[\$(arrow)\] "
+PS1="\h \$(directea) \$(gitty)\n\$(arrow) "
