@@ -35,7 +35,8 @@ directea() {
 
 gitty() {
   command -v git >/dev/null || return
-  git rev-parse --is-inside-work-tree &>/dev/null || return
+  local toplevel
+  toplevel=$(timeout 1s git rev-parse --show-toplevel 2>/dev/null) || return
 
   local branch
   branch=$(git symbolic-ref --short HEAD 2>/dev/null) || return
