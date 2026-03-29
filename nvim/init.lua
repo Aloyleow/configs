@@ -12,6 +12,10 @@ vim.cmd("colorscheme rose-pine-moon")
 --      end
 --})
 
-
-
-
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argc() == 0 then
+      vim.cmd("Yazi")
+    end
+  end,
+})
